@@ -10,12 +10,14 @@ Configure Gren usign `.grenrc` in your repository and run this action in GitHub 
 name: Release notes
 
 on: [release]
+  types: [published]
+    
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: smartlyio/github-release-notes-action@v1.0.0
+      - uses: actions/checkout@v2
+      - uses: lakto/gren-action@v1.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 ```
