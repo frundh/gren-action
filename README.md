@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: lakto/gren-action@v1.1.0
+      - uses: lakto/gren-action@v2.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
