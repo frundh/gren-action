@@ -1,6 +1,13 @@
 name: "GitHub Release Notes"
 description: "GitHub release notes and changelog generator using Gren"
-author: "Smartly.io"
+author: "Smartly.io and Kilchenmann"
+inputs:
+  options:  # Add the gren options here
+    description: 'Add the gren options here; e.g. " --override --prerelease"'
+    required: false
+    default: ''
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.options }}

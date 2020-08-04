@@ -20,4 +20,6 @@ jobs:
       - uses: lakto/gren-action@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          options: --override --prerelease 
 ```
