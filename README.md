@@ -11,7 +11,7 @@ name: Release notes
 
 on: [release]
   types: [published]
-    
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -21,5 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          options: --override --prerelease 
+          options: '--override --prerelease'
 ```
+
+In options you can add all [options from Gren](https://github-tools.github.io/github-release-notes/options.html) itself except of `--username`, `--repo` and `--token`. They are already part of the lakto/gren-action entrypoint script.
