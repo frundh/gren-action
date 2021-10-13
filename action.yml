@@ -2,6 +2,10 @@ name: "GitHub Release Notes"
 description: "GitHub release notes and changelog generator using Gren"
 author: "Smartly.io and Kilchenmann"
 inputs:
+  command:
+    description: 'Gren command, "release" or "changelog"'
+    required: false
+    default: 'release'
   options:  # Add the gren options here
     description: 'Add the gren options here; e.g. " --override --prerelease"'
     required: false
@@ -10,4 +14,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.command }}
     - ${{ inputs.options }}
